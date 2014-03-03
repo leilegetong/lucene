@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <!-- 启用开发模式 -->
+    <constant name="struts.devMode" value="false"/>
+    <!-- 配置编码格式为UTF-8 -->
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <!-- URL后自动加入参数不启用 -->
+    <constant name="struts.url.includeParams" value="none" /> 
+    <!-- 不启用Struts2自带主题样式 -->
+    <constant name="struts.ui.theme" value="simple"/>
+    <!-- 加入Struts默认加载的文件 -->
+    <include file="struts-default.xml"/>  
+    <include file="struts-plugin.xml" />  
+    
+    <package name="searchengine" extends="struts-default" >
+    	<action name="index" class="com.searchengine.action.SearchAction" method="searcheContent">
+    		<result name="success" type="redirect">/result.jsp</result>
+    	</action>
+		</package>
+	
+</struts>
